@@ -74,6 +74,7 @@ message Award {
     optional string NAICSDescription = 20;
     optional string CFDAProgramNumber = 21;
     optional string CFDAProgramTitle = 22;
+    optional string typeOfTransactionCode = 23; // We need a better name. Also, this is likely an ENUM
 }
 
 message PlaceOfPerformance {
