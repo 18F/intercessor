@@ -1,0 +1,117 @@
+message Action {
+    optional string id = 1;
+    optional string recordType = 2;
+    optional string typeOfAction = 3;
+    optional int32 modificationAmendmentNumber = 4;
+    optional Award award = 5;
+    optional AgencyTransaction transaction = 6;
+}
+
+message AgencyTransaction {
+    optional string id = 1;
+    optional string objectClass = 2;
+    optional Amount outlays = 3;
+    optional TreasuryAccountSymbol treasuryAccountSymbol = 4;
+}
+
+message Amount {
+    optional float amount = 1;
+    optional string currency = 2;
+}
+
+message TreasuryAccountSymbol {
+    optional string id = 1;
+    optional string subLevelPrefix = 2;
+    optional string allocationTransferAgencyId = 3;
+    optional string beginningPeriodOfAvailability = 4;
+    optional string endingPeriodOfAvailability = 5;
+    optional string availabilityTypeCode = 6;
+    optional string mainAccount = 7;
+    optional string subaccount = 8;
+    optional string asOfTime = 9;
+    optional Account accounts = 10;
+}
+
+message Account {
+    optional string id =1;
+    optional Amount budgetAuthorityAppropriated = 2;
+    optional Amount obligatedAmount = 3;
+    optional Amount unobligatedAmount = 4;
+    optional Amount otherBudgetaryResources = 5;
+    optional Agency federalAgency = 6;
+}
+
+message Agency {
+    optional string id = 1;
+    optional string agencyName = 2;
+    optional string agencyCode = 3;
+    optional string subTierAgencyName = 4;
+    optional string subTierAgencyCode = 5;
+    optional string officeName = 6;
+    optional string officeCode = 7;
+}
+
+message Award {
+    optional string id = 1;
+    optional string awardDescription = 2;
+    optional int32 awardNumber = 3;
+    optional Agency fundingAgency = 4;
+    optional Agency awardingAgency = 5;
+    optional string parentAward = 6; // Should point to the ID of another award
+    optional Amount fundingActionObligation = 7;
+    optional Amount currentTotalValue = 8;
+    optional Amount potentialTotalValue = 9;
+    optional Amount currentTotalFundingObligationAmount = 10;
+    optional Amount nonFederalFundingAmount = 11;
+    optional string actionDate = 12;
+    optional string periodOfPerformanceStart = 13;
+    optional string periodOfPerformanceCurrentEnd = 14;
+    optional string periodOfPerformancePotentialEnd = 15;
+    optional string orderingPeriodEndDate = 16;
+    repeated PlaceOfPerformance placeOfPerformance = 17;
+    repeated Awardee awardee = 18;
+    optional string NAICSCode = 19;
+    optional string NAICSDescription = 20;
+    optional string CFDAProgramNumber = 21;
+    optional string CFDAProgramType = 22;
+}
+
+message PlaceOfPerformance {
+    optional string id = 1;
+    optional string placeOfPerformanceCity = 2;
+    optional string placeOfPerformanceState = 3;
+    optional string placeOfPerformanceZip = 4;
+    optional string placeOfPerformanceCountryCode = 5;
+    optional string placeOfPerformanceCountryName = 6;
+    optional string placeOfPerformanceCongressionalDistrict = 7;
+}
+
+message Awardee {
+    optional id = 1;
+    optional string businessType = 2;
+    optional string DUNSNumber = 3;
+    optional string DUNSPlusFour = 4;
+    optional string businessName = 5;
+    optional string parentDUNSNumber = 6;
+    optional string parentBusinessName = 7;
+    optional Address businessAddress = 8;
+    optional string businessCongressionalDistrict = 9;
+    repeated HighlyCompensatedOfficer highlyCompensatedOfficer = 10;
+}
+
+message Address {
+    optional string street1 = 1;
+    optional string street2 = 2;
+    optional string street3 = 3;
+    optional string city = 4;
+    optional string countryName = 5;
+    optional string countryCode = 6;
+    optional string postalCode = 7;
+    optional string USZipCodePlusFour = 8;
+}
+
+message HighlyCompensatedOfficer {
+    optional string firstName = 1;
+    optional string lastName = 2;
+    optional Amount totalCompensation = 3;
+}
