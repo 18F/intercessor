@@ -73,7 +73,7 @@ message Award {
     optional string NAICSCode = 19;
     optional string NAICSDescription = 20;
     optional string CFDAProgramNumber = 21;
-    optional string CFDAProgramType = 22;
+    optional string CFDAProgramTitle = 22;
 }
 
 message PlaceOfPerformance {
