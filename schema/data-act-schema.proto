@@ -10,7 +10,7 @@ message Action {
 message AgencyTransaction {
     optional string id = 1;
     optional string objectClass = 2;
-    optional Amount outlays = 3;
+    repeated Amount outlays = 3;
     optional TreasuryAccountSymbol treasuryAccountSymbol = 4;
 }
 
@@ -27,9 +27,9 @@ message TreasuryAccountSymbol {
     optional string endingPeriodOfAvailability = 5;
     optional string availabilityTypeCode = 6;
     optional string mainAccount = 7;
-    optional string subaccount = 8;
+    optional string subAccount = 8;
     optional string asOfTime = 9;
-    optional Account accounts = 10;
+    optional Account account = 10;
 }
 
 message Account {
@@ -37,7 +37,7 @@ message Account {
     optional Amount budgetAuthorityAppropriated = 2;
     optional Amount obligatedAmount = 3;
     optional Amount unobligatedAmount = 4;
-    optional Amount otherBudgetaryResources = 5;
+    optional Amount otherBudgetaryResources = 5; // Is this unique?
     optional Agency federalAgency = 6;
 }
 
@@ -68,8 +68,8 @@ message Award {
     optional string periodOfPerformanceCurrentEnd = 14;
     optional string periodOfPerformancePotentialEnd = 15;
     optional string orderingPeriodEndDate = 16;
-    repeated PlaceOfPerformance placeOfPerformance = 17;
-    repeated Awardee awardee = 18;
+    repeated PlaceOfPerformance placesOfPerformance = 17;
+    repeated Awardee awardees = 18;
     optional string NAICSCode = 19;
     optional string NAICSDescription = 20;
     optional string CFDAProgramNumber = 21;
@@ -97,7 +97,7 @@ message Awardee {
     optional string parentBusinessName = 7;
     optional Address businessAddress = 8;
     optional string businessCongressionalDistrict = 9;
-    repeated HighlyCompensatedOfficer highlyCompensatedOfficer = 10;
+    repeated HighlyCompensatedOfficer highlyCompensatedOfficers = 10;
 }
 
 message Address {
