@@ -2,3 +2,4 @@
 data/
 *.pyc
 .ipynb_checkpoints/
+*_pb2.py
