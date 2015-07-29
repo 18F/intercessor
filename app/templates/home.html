@@ -12,6 +12,11 @@ Home
 {% if upload_filename %}
 <h5>File successfully uploaded: {{ upload_filename }}</h5>
 {% endif %}
+
+{% if check %}
+<h5>There was a problem with one of the CSVs</h5>
+{% endif %}
+
 <form action="/" method="post" enctype="multipart/form-data">
   <input type="file" name="file" accept=".csv">
   <input type="submit" value="Upload">
