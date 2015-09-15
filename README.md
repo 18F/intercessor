@@ -1,19 +1,19 @@
 # DATA Act pilot
 
-The DATA Act requires the Department of Treasury and the Office of Management and Budget to standardize and publish federal spending data online. This repository contains code for a Small Business Administration (SBA) pilot project that:
+The DATA Act requires the Department of Treasury and the Office of Management and Budget (OMB) to standardize and publish federal spending data online. 
+
+This repository contains code for a Small Business Administration (SBA) pilot project that:
 * Maps agency financial and award data to DATA Act elements,
 * Translates them to a uniform DATA Act format, and
 * Validates the results.
 
 This work is a small experiment using real agency data. The diagrams and other artifacts here do not represent official DATA Act guidance or policy, and the code does not represent an official DATA Act product.
 
-
-## Background
-
-This project is an exploration of the DATA Act data submission process from the agency perspective. The repository is learning in progress and subject to change. Its goal is to clarify the steps and tools agencies will need as they undertake DATA Act compliance.
-
+Thanks to the SBA for leading the way and lending their time and expertise to this effort.
 
 ## Overview
+
+This project is an exploration of the DATA Act data submission process from the agency perspective. The repository is learning in progress and subject to change. Its goal is to clarify the steps and tools agencies need as they undertake DATA Act compliance.
 
 View progress and upcoming work are on our task board: https://waffle.io/18F/data-act-pilot.
 
@@ -28,21 +28,21 @@ Below is an overview of the process.
 * **DATA Act Schema (_Schema_)**: The generic model of the relationships between the data elements that agencies must report to Treasury as part of the DATA Act and previous transparency legislation.
 
 ## Resources
-Here's a list of DATA Act resources and artifacts that might be useful to people working on this pilot:
+Below, we've identified some useful resources and artifacts for people working on this pilot.
 
-* [Finalized data element definitions](https://max.gov/maxportal/assets/public/offm/DataStandardsFinal.htm "Finalized Data Act Element Definitions").
-* Mapping document. This is the document that maps specific SBA JAAMS and Prism attributes to their DATA Act schema counterparts. It's not currently public and resides in the data folder.
-* [SBA Entity Relationship Diagram](https://raw.githubusercontent.com/18F/data-act-pilot/master/assets/images/jaams-prism-data-act-mapping.png "SBA ERD"). A diagram of the relationships between the JAAMS and Prism tables that contain the fields being mapped to the DATA Act schema.
-* [Research Questions](https://github.com/18F/data-act-pilot/labels/research%20questions "open issues labeled as 'research'"). Questions (and some answers) that have emerged during the pilot. Closed (_i.e._, answered) questions are [here](https://github.com/18F/data-act-pilot/issues?q=label%3A%22research+questions%22+is%3Aclosed "closed issues labeled as 'research'").
-* [DATA Act Playbook](https://www.usaspending.gov/Documents/Summary%20of%20DATA%20Act%20Playbook.pdf "DATA Act Playbook"). Recommended steps for agencies to fulfill DATA Act requirements.
-* Pilot Screencast:
+* The OMB published [finalized data element definitions](https://max.gov/maxportal/assets/public/offm/DataStandardsFinal.htm "Finalized Data Act Element Definitions").
+* Mapping document: This is the document that maps specific SBA JAAMS and Prism attributes to their DATA Act schema counterparts. It's not currently public and resides in the data folder.
+* The [SBA entity relationship diagram](https://raw.githubusercontent.com/18F/data-act-pilot/master/assets/images/jaams-prism-data-act-mapping.png "SBA ERD") shows the relationships between the JAAMS and Prism tables that contain the fields being mapped to the DATA Act schema.
+* Explore [research questions](https://github.com/18F/data-act-pilot/labels/research%20questions "open issues labeled as 'research'") (and some answers) that have emerged during the pilot. Answered questions are [stored as "closed" in GitHub](https://github.com/18F/data-act-pilot/issues?q=label%3A%22research+questions%22+is%3Aclosed "closed issues labeled as 'research'").
+* The [DATA Act Playbook](https://www.usaspending.gov/Documents/Summary%20of%20DATA%20Act%20Playbook.pdf "DATA Act Playbook") contains recommended steps for agencies to fulfill DATA Act requirements.
+* Pilot screencast:
     * [Mac and newer versions of Windows](assets/screencast/data_act_pilot_screencast_sept_2015.mp4 "Pilot screencast, .mp4 version")
     * [Older versions of Windows](assets/screencast/data_act_pilot_screencast_sept_2015.mp4 "Pilot screencast, .avi version")
 
 ## Data
 For the first iterations of this pilot, we're using SBA 2014 grants data.
 
-Because it contains PII (personally identifiable information), the SBA data is not included in the code repository. The data includes:
+Because it contains personally identifiable information (PII), the SBA data is not included in the code repository. The data includes:
 
 * Extracts from JAAMS, SBA's financial system
 * Extracts from Prism, SBA's awards system
@@ -57,7 +57,7 @@ For reference, the data accessed in the code are structured as follows. The text
 * `data/prism`: text file extracts from Prism
 * `data/prism/sql`: sql for Prism table creation/joins
 
-### Running the Processors
+### Running the processors
 These directions assume that the project is already installed on your system. If you don't have the project installed and running, please see [INSTALL.md](INSTALL.md "Installation instructions").
 
 There are two steps for converting SBA data to DATA Act input format.
@@ -72,8 +72,8 @@ Example usage (to run both processes):
 
 `python processors/validattor [micah to fill in]`
 
-### Querying the SAM api
-The SAM data utility queries the SAM API based on DUNS number and returns a JSON version of the response. A list of requested fields can be supplied to limit the response to only the data required. A full list of available fields and their definitions can be found at [SAM Field Definitions](http://gsa.github.io/sam_api/sam/fields.html).
+### Querying the SAM API
+The SAM data utility queries the SAM API based on DUNS number and returns a JSON version of the response. A list of requested fields can be supplied to limit the response to only the data required. A full list of available fields and their definitions are available at [SAM Field Definitions](http://gsa.github.io/sam_api/sam/fields.html).
 
 Example usage:
 
