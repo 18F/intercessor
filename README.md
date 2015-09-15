@@ -1,34 +1,30 @@
-# DATA Act Pilot
+# DATA Act pilot
 
-This repository contains code for a Small Business Administration pilot project that:
-* maps agency financial and award data to DATA Act elements,
-* translates them to a uniform DATA Act format, and
-* validates the results.
+The DATA Act requires the Department of Treasury and the Office of Management and Budget to standardize and publish federal spending data online. This repository contains code for a Small Business Administration (SBA) pilot project that:
+* Maps agency financial and award data to DATA Act elements,
+* Translates them to a uniform DATA Act format, and
+* Validates the results.
 
 This work is a small experiment using real agency data. The diagrams and other artifacts here do not represent official DATA Act guidance or policy, and the code does not represent an official DATA Act product.
 
+
 ## Background
 
-This project is an exploration of the DATA Act data submission process from the agency perspective. The repository is learning-in-progress, subject to change, and its goal is to clarify the steps and tools agencies will need as they undertake DATA Act compliance.
+This project is an exploration of the DATA Act data submission process from the agency perspective. The repository is learning in progress and subject to change. Its goal is to clarify the steps and tools agencies will need as they undertake DATA Act compliance.
 
-Thanks to the Small Business Administration for leading the way and lending their time and expertise to this effort.
-
-### Questions?
-
-Because this is a small experiment and a tiny piece of the overall DATA Act implementation, 18F is unable to speak with vendors individually about the work. We welcome the DATA Act community to follow the project and contribute here.
 
 ## Overview
 
-Progress and upcoming work are viewable on our Github/Waffle-based task board: https://waffle.io/18F/data-act-pilot
+View progress and upcoming work are on our task board: https://waffle.io/18F/data-act-pilot.
 
 Below is an overview of the process.
 
-![DATA Act Pilot Process Flow](https://raw.githubusercontent.com/18F/data-act-pilot/master/SBA%20pilot%20process.png)
+![DATA Act pilot process flow](https://raw.githubusercontent.com/18F/data-act-pilot/master/SBA%20pilot%20process.png)
 
 ## Glossary
 * **JAAMS**: SBA's financial system
 * **Prism**: SBA's grants and contracts system
-* **SAM**: Federal government-wide system that contains information about entities (businesses, individuals, or government agencies) that do business with the federal government. SAM stands for _System for Award Management_.
+* **SAM**: _System for Award Management_, a federal, government-wide system that contains information about entities (businesses, individuals, or government agencies) that do business with the federal government
 * **DATA Act Schema (_Schema_)**: The generic model of the relationships between the data elements that agencies must report to Treasury as part of the DATA Act and previous transparency legislation.
 
 ## Resources
@@ -53,7 +49,7 @@ Because it contains PII (personally identifiable information), the SBA data is n
 
 These extracts will be supplemented by calls to the [SAM API](https://gsa.github.io/sam_api/sam/index.html), which contains details about entities (businesses and individuals) that receive federal funds.
 
-### Data Structure
+### Data structure
 For reference, the data accessed in the code are structured as follows. The text files are extracts from their respective underlying databases and have been provided to the team in comma-quote delimited format.
 
 * `data/jaams`: text file extracts from JAAMS
@@ -88,3 +84,8 @@ To get all fields for a given DUNS:
 To limit response to a list of fields:
 
 `python processors/get_sam_data.py 8291938660000 --fields registrationDate legalBusinessName samAddress`
+
+
+### Questions?
+
+Because this is a small experiment and a tiny piece of the overall DATA Act implementation, 18F is unable to speak with vendors individually about the work. We welcome the DATA Act community to follow the project and contribute here.
