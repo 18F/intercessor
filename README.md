@@ -73,7 +73,7 @@ Example usage (to run both processes):
 `python processors/validattor [micah to fill in]`
 
 ### Query the SAM API
-The SAM data utility queries the SAM API based on DUNS number and returns a JSON version of the response. A list of requested fields can be supplied to limit the response to only the data required. A full list of available fields and their definitions are available at [SAM Field Definitions](http://gsa.github.io/sam_api/sam/fields.html).
+The SAM data utility queries the SAM API based on DUNS number and returns a JSON version of the response. A list of requested fields can be supplied to limit the response to only the data required. A full list of available fields and their definitions are available at [SAM field definitions](http://gsa.github.io/sam_api/sam/fields.html).
 
 Example usage:
 
