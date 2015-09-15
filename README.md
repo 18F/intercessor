@@ -57,7 +57,7 @@ For reference, the data accessed in the code are structured as follows. The text
 * `data/prism`: text file extracts from Prism
 * `data/prism/sql`: sql for Prism table creation/joins
 
-### Running the processors
+### Run the processors
 These directions assume that the project is already installed on your system. If you don't have the project installed and running, please see [INSTALL.md](INSTALL.md "Installation instructions").
 
 There are two steps for converting SBA data to DATA Act input format.
@@ -72,7 +72,7 @@ Example usage (to run both processes):
 
 `python processors/validattor [micah to fill in]`
 
-### Querying the SAM API
+### Query the SAM API
 The SAM data utility queries the SAM API based on DUNS number and returns a JSON version of the response. A list of requested fields can be supplied to limit the response to only the data required. A full list of available fields and their definitions are available at [SAM Field Definitions](http://gsa.github.io/sam_api/sam/fields.html).
 
 Example usage:
