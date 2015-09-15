@@ -16,7 +16,7 @@ Follow [our documentation](https://docs.18f.gov/getting-started/setup/), using t
 8. Make sure you're in the `app/` folder of the data-act repository.
 9. Build the site using the command `cf push data-act-pilot-v2 -d 18f.gov`.
 
-## Update authorization credentials: 
+## Update authorization credentials
 1. Log in.
 2. Set the username using the command `cf set-env data-act-pilot-v2  WEB_USERNAME '<username>'`.
 3. Set the password using the command  `cf set-env data-act-pilot-v2  WEB_PASSWORD '<password>'`.
